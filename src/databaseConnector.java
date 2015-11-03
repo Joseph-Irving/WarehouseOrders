@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class databaseConnector
 {
 	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-	static final String DB_URL = "jdbc:mysql://10.50.15.8:8888/warehouse";
+	static final String DB_URL = "jdbc:mysql://10.50.15.6:8888/warehouse";
 	static final String USER = "root";
 	static final String PASS = "dingo";
 
