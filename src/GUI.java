@@ -95,31 +95,42 @@ public class GUI extends JFrame{
 			case "Stock": stockOrders();
 			break;
 			case "CheckOut": OMS.custProcc(1, newlist.getSelectedIndex());
-
+			mainFrame.remove(textarea);
+			customer();
 			break;
 			case "CheckIn": OMS.custProcc(0, newlist.getSelectedIndex());
-
+			mainFrame.remove(textarea);
+			customer();
 			break;
 			case "Confirm": String stat = (String)status.getSelectedItem();
 			OMS.custUpdate(stat, newlist.getSelectedIndex());
+			mainFrame.remove(textarea);
+			customer();
 			break;
 			case "Home": mainFrame.setVisible(false);
 			main(null);
 			break;
 			case "Confirm Delivery": CreateNewStockOrder.updateStatus(newlist.getSelectedIndex());
+			mainFrame.remove(newlist);
+			stockOrders();
 			break;
 			case "Order": databaseConnector.newStockOrder(newOrderID);
+			mainFrame.remove(newlist);
+			stockOrders();
 			break;
 			case "Order Stock": String z = quantity.getText();
 				int quantities =  Integer.parseInt(z);
 			 int productID = CreateNewStockOrder.findProductID(products.getSelectedIndex()) ;
 				databaseConnector.newStockOrderLine(newOrderID, productID, quantities);
+				mainFrame.remove(newlist);
+				stockOrders();
 			
 
 			}}}
 
 	private void stockOrders()
 	{
+		stockPanel.removeAll();
 		mainFrame.remove(controlPanel);
 		mainFrame.remove(custPanel);
 		mainFrame.add(stockPanel);
@@ -168,8 +179,12 @@ public class GUI extends JFrame{
 	}
 	
 	private void customer() {
+		
+		custPanel.removeAll();
+		
 		mainFrame.remove(controlPanel);
 		mainFrame.remove(stockPanel);
+		
 		mainFrame.add(custPanel);
 		
 		headerLabel.setText("Customer Orders");
