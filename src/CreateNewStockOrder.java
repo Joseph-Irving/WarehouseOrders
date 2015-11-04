@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 public class CreateNewStockOrder {
 
-	public static int stockOrder()
+	public static int stockOrder() //generates a new order ID
 	{
 		ArrayList<StockOrder> stockOrders = new ArrayList<StockOrder>();
 		stockOrders = databaseConnector.collectStockOrders();
@@ -12,7 +12,7 @@ public class CreateNewStockOrder {
 		return newOrderID;
 	}
 
-	public static void orderLine(int orderID)
+	public static void orderLine(int orderID) //this isn't used, I left it in just in case
 	{
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Please enter the product ID you want");
@@ -37,7 +37,7 @@ public class CreateNewStockOrder {
 
 	}
 
-	public static String[] orderList()
+	public static String[] orderList() //returns the orders
 	{
 		ArrayList<StockOrder> customerOrders = new ArrayList<StockOrder>(); //gets the orders
 		customerOrders = databaseConnector.collectStockOrders();	
@@ -52,7 +52,7 @@ public class CreateNewStockOrder {
 		return listData;
 	}
 
-	public static void updateStatus(int input)
+	public static void updateStatus(int input) //updates whether the stock order has been delivered or not
 	{
 		ArrayList<StockOrder> customerOrders = new ArrayList<StockOrder>(); //gets the orders
 		customerOrders = databaseConnector.collectStockOrders();
@@ -62,7 +62,7 @@ public class CreateNewStockOrder {
 
 	}
 
-	public static String[] productList()
+	public static String[] productList() //generates a list of the products
 	{
 		ArrayList<Product> products = new ArrayList<Product>();
 		products = databaseConnector.createProducts();
@@ -77,7 +77,7 @@ public class CreateNewStockOrder {
 		return list;		
 	}
 
-	public static int findProductID(int input)
+	public static int findProductID(int input) //finds the product ID from an input
 	{
 		int id;
 		ArrayList<Product> products = new ArrayList<Product>();

@@ -44,7 +44,7 @@ public class OMS {
 		return list;
 	}
 
-	public static void custUpdate(String status, int input)
+	public static void custUpdate(String status, int input) //updates the status
 	{
 
 		ArrayList<Order> customerOrders = new ArrayList<Order>(); //gets the orders
@@ -58,7 +58,7 @@ public class OMS {
 		
 	}
 
-	public static void custProcc(int decision, int input)
+	public static void custProcc(int decision, int input) //updates whether checked out or not
 	{
 
 		ArrayList<Order> customerOrders = new ArrayList<Order>(); //gets the orders
@@ -75,7 +75,7 @@ public class OMS {
 
 	}
 
-	public static String[] customerOrders()
+	public static String[] customerOrders() //returns all customer orders
 	{
 		ArrayList<Order> customerOrders = new ArrayList<Order>(); //gets the orders
 		customerOrders = databaseConnector.collectOrders();	

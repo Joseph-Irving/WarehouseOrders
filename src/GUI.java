@@ -69,7 +69,8 @@ public class GUI extends JFrame{
 
 	}
 
-	private void MainMenu() {
+	private void MainMenu() //the main menu 
+	{
 		
 		headerLabel.setText("Warehouse Order Management System");
 		JButton customerButton = new JButton("Customer Orders");
@@ -128,7 +129,7 @@ public class GUI extends JFrame{
 
 			}}}
 
-	private void stockOrders()
+	private void stockOrders() //the stock order menu
 	{
 		stockPanel.removeAll();
 		mainFrame.remove(controlPanel);
@@ -140,7 +141,7 @@ public class GUI extends JFrame{
 		newlist = new JList(listData);
 		mainFrame.add(newlist);
 		
-		quantity = new JTextField(10);
+		quantity = new JTextField(10); //editable text field for entering quanitity
 		quantity.setText("quantity");
 		
 		
@@ -178,7 +179,8 @@ public class GUI extends JFrame{
 
 	}
 	
-	private void customer() {
+	private void customer() //the customer order menu 
+	{
 		
 		custPanel.removeAll();
 		
@@ -190,7 +192,7 @@ public class GUI extends JFrame{
 		headerLabel.setText("Customer Orders");
 
 		
-		status = new JComboBox(options);
+		status = new JComboBox(options); //drop down box
 		status.setSelectedIndex(0);
 		
 
